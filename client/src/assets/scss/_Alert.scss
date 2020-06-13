@@ -1,0 +1,16 @@
+.alert {
+	height: auto;
+	padding: 20px 25px;
+	margin: auto;
+	text-align: center;
+	z-index: 100;
+	background-color: $success;
+	z-index: 100;
+	position: absolute;
+	top: 130px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	vertical-align: middle;
+	color: $gray-100;
+}

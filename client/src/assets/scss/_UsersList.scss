@@ -1,0 +1,28 @@
+.users-list {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+
+	.user-list__header {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		tr {
+			text-align: center;
+			padding: 5px 0;
+		}
+		tr:nth-child(even) {
+			background: $gray-300;
+		}
+		td {
+			padding: 15px 0;
+		}
+	}
+}
