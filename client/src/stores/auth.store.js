@@ -1,4 +1,4 @@
-import { observable, action, decorate } from 'mobx';
+import { observable, action, decorate, reaction } from 'mobx';
 import APIs from 'api';
 
 class AuthStore {
@@ -7,8 +7,21 @@ class AuthStore {
 	user = {};
 	alert = '';
 
+	constructor() {
+		reaction(
+			() => this.token,
+			(token) => {
+				if (token) {
+					window.localStorage.setItem('accessToken', token);
+				} else {
+					window.localStorage.removeItem('accessToken');
+				}
+			}
+		);
+	}
+
 	login(data) {
-		APIs.users
+		APIs.auth
 			.login(data)
 			.then((response) => {
 				this.token = response.token;

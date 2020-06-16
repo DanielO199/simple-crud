@@ -9,7 +9,7 @@ export default function Protected(Children) {
 		render() {
 			const { token } = AuthStore;
 			return (
-				<div className='authComponent full-height'>
+				<div>
 					{token ? (
 						<Children {...this.props} />
 					) : !token ? (

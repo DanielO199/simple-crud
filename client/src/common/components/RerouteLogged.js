@@ -9,7 +9,7 @@ export default function RerouteLogged(Children) {
 		render() {
 			const { token } = AuthStore;
 			return (
-				<div className='authComponent full-height'>
+				<div>
 					{token ? (
 						<Redirect
 							to={{
